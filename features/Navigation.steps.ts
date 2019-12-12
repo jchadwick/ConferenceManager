@@ -5,6 +5,6 @@ import { assert } from "chai";
 export class NavigationSteps {
   @given(/navigate to the "(.*?)" page/)
   givenNavigatingToPage(page: string) {
-    console.debug(`Navigate to ${page}`);
+    console.log(`Navigate to ${page}`);
   }
 }

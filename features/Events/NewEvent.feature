@@ -9,8 +9,8 @@ Feature: Create New Event
     Scenario: Event Organizer creates a new Event
         Given I am authenticated as an Organizer
         When I populate the form with:
-            | name       | description       |
-            | Test Event | My new test event |
+            | name        | Test Event        |
+            | description | My new test event |
         And I submit the form
         Then the event should be created
         And I should be taken to the new event's page

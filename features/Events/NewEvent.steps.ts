@@ -5,13 +5,13 @@ import { assert } from "chai";
 export class NewEventSteps {
   @then(/the event should be created/)
   thenTheEventShouldBeCreated() {
-    console.debug(`the event should be created`);
+    console.log(`the event should be created`);
     return "pending";
   }
 
   @then(/taken to the new event's page/)
   thenIShouldBeOnTheNewEventPage() {
-    console.debug(`I should be on the new event's page`);
+    console.log(`I should be on the new event's page`);
     return "pending";
   }
 }
