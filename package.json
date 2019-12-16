@@ -6,6 +6,7 @@
   "scripts": {
     "test":  "npm run test:cucumber",
     "test:cucumber":  "./node_modules/.bin/cucumber-js -p default",
+    "test:cucumber:snippets":  "./node_modules/.bin/cucumber-js -p default -f snippets",
     "test:cucumber:debug": "node --inspect=1337 --inspect-brk --nolazy node_modules/cucumber/bin/cucumber-js"
 
   },

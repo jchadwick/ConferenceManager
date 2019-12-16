@@ -1,0 +1,281 @@
+[
+  {
+    "matches": [
+      {
+        "line": 7,
+        "text": "I am not authenticated",
+        "uri": "features\\Users\\NewUserRegistration.feature",
+        "duration": 3000000
+      },
+      {
+        "line": 7,
+        "text": "I am not authenticated",
+        "uri": "features\\Users\\NewUserRegistration.feature",
+        "duration": 1000000
+      }
+    ],
+    "code": "() => {\r\n    console.log(`Given not authenticated`);\r\n    //return \"pending\";\r\n}",
+    "line": 16,
+    "pattern": "I am not authenticated",
+    "patternType": "RegularExpression",
+    "uri": "features\\util\\Authentication.steps.ts",
+    "meanDuration": 2000000
+  },
+  {
+    "matches": [
+      {
+        "line": 10,
+        "text": "I am authenticated as an Organizer",
+        "uri": "features\\Events\\NewEvent.feature",
+        "duration": 1000000
+      }
+    ],
+    "code": "(role) => {\r\n    if (!role) {\r\n        throw new Error(\"Missing user role\");\r\n    }\r\n    console.log(`Given role ${role}`);\r\n    //return 'pending';\r\n}",
+    "line": 3,
+    "pattern": "I am authenticated as an? (.*?)",
+    "patternType": "RegularExpression",
+    "uri": "features\\util\\Authentication.steps.ts",
+    "meanDuration": 1000000
+  },
+  {
+    "matches": [
+      {
+        "line": 7,
+        "text": "I am authenticated",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature",
+        "duration": 2000000
+      },
+      {
+        "line": 25,
+        "text": "I am authenticated",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature",
+        "duration": 0
+      }
+    ],
+    "code": "() => this.givenAuthenticatedAsRole(\"Authenticated User\")",
+    "line": 12,
+    "pattern": "I am authenticated$",
+    "patternType": "RegularExpression",
+    "uri": "features\\util\\Authentication.steps.ts",
+    "meanDuration": 1000000
+  },
+  {
+    "matches": [
+      {
+        "line": 7,
+        "text": "I navigate to the \"Create Event\" page",
+        "uri": "features\\Events\\NewEvent.feature",
+        "duration": 1000000
+      },
+      {
+        "line": 10,
+        "text": "I navigate to the \"New User\" page",
+        "uri": "features\\Users\\NewUserRegistration.feature",
+        "duration": 1000000
+      },
+      {
+        "line": 18,
+        "text": "I navigate to the \"New User\" page",
+        "uri": "features\\Users\\NewUserRegistration.feature",
+        "duration": 0
+      },
+      {
+        "line": 8,
+        "text": "I navigate to the \"Submit Session\" page",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      },
+      {
+        "line": 26,
+        "text": "I navigate to the \"Submit Session\" page",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      }
+    ],
+    "code": "(page) => {\r\n    const url = Pages_1.Pages[page];\r\n    if (url == null) {\r\n        return `pending: no route for \"${page}\"`;\r\n    }\r\n    console.log(`Navigate to ${page} (${url})`);\r\n}",
+    "line": 4,
+    "pattern": "navigate to the \"(.*?)\" page",
+    "patternType": "RegularExpression",
+    "uri": "features\\util\\Navigation.steps.ts",
+    "meanDuration": 400000
+  },
+  {
+    "matches": [
+      {
+        "line": 11,
+        "text": "I enter \"test@test.com\" in the emailAddress field",
+        "uri": "features\\Users\\NewUserRegistration.feature",
+        "duration": 2000000
+      },
+      {
+        "line": 19,
+        "text": "I enter \"test@test.com\" in the emailAddress field",
+        "uri": "features\\Users\\NewUserRegistration.feature",
+        "duration": 0
+      },
+      {
+        "line": 20,
+        "text": "I enter \"\" in the password field",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      },
+      {
+        "line": 12,
+        "text": "I enter \"Passw0rd123!\" in the password field",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      },
+      {
+        "line": 11,
+        "text": "I populate the form with:",
+        "uri": "features\\Events\\NewEvent.feature"
+      },
+      {
+        "line": 9,
+        "text": "I populate the form with:",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      },
+      {
+        "line": 27,
+        "text": "I populate the form with:",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      },
+      {
+        "line": 14,
+        "text": "I submit the form",
+        "uri": "features\\Events\\NewEvent.feature"
+      },
+      {
+        "line": 17,
+        "text": "submit the form",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      },
+      {
+        "line": 30,
+        "text": "submit the form",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      },
+      {
+        "line": 13,
+        "text": "submit the form",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      },
+      {
+        "line": 21,
+        "text": "submit the form",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      }
+    ],
+    "code": "function () {\n            const bindingRegistry = binding_registry_1.BindingRegistry.instance;\n            const scenarioContext = this[SCENARIO_CONTEXT_SLOTNAME];\n            const matchingStepBindings = bindingRegistry.getStepBindings(stepBinding.stepPattern.toString(), scenarioContext.scenarioInfo.tags);\n            if (matchingStepBindings.length > 1) {\n                let message = `Ambiguous step definitions for '${matchingStepBindings[0].stepPattern}':\\n`;\n                matchingStepBindings.forEach(matchingStepBinding => {\n                    message =\n                        message +\n                            `\\t\\t${String(matchingStepBinding.targetPropertyKey)} (${matchingStepBinding.callsite.toString()})\\n`;\n                });\n                return new Error(message);\n            }\n            const contextTypes = bindingRegistry.getContextTypesForTarget(matchingStepBindings[0].targetPrototype);\n            const bindingObject = scenarioContext.getOrActivateBindingClass(matchingStepBindings[0].targetPrototype, contextTypes);\n            bindingObject._worldObj = this;\n            return bindingObject[matchingStepBindings[0].targetPropertyKey].apply(bindingObject, arguments);\n        }",
+    "line": 186,
+    "pattern": "submit the form",
+    "patternType": "RegularExpression",
+    "uri": "node_modules\\cucumber-tsflow\\src\\binding-decorator.ts",
+    "meanDuration": 166666.66666666666
+  },
+  {
+    "matches": [
+      {
+        "line": 22,
+        "text": "I should NOT be registered as a new user in the system",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      },
+      {
+        "line": 14,
+        "text": "I should be registered as a new user in the system",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      },
+      {
+        "line": 16,
+        "text": "I should be taken to the new event's page",
+        "uri": "features\\Events\\NewEvent.feature"
+      },
+      {
+        "line": 32,
+        "text": "I should see an error message",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      },
+      {
+        "line": 23,
+        "text": "I should see an error message \"Invalid password\"",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      },
+      {
+        "line": 15,
+        "text": "the event should be created",
+        "uri": "features\\Events\\NewEvent.feature"
+      }
+    ],
+    "code": "function () {\n            const bindingRegistry = binding_registry_1.BindingRegistry.instance;\n            const scenarioContext = this[SCENARIO_CONTEXT_SLOTNAME];\n            const matchingStepBindings = bindingRegistry.getStepBindings(stepBinding.stepPattern.toString(), scenarioContext.scenarioInfo.tags);\n            if (matchingStepBindings.length > 1) {\n                let message = `Ambiguous step definitions for '${matchingStepBindings[0].stepPattern}':\\n`;\n                matchingStepBindings.forEach(matchingStepBinding => {\n                    message =\n                        message +\n                            `\\t\\t${String(matchingStepBinding.targetPropertyKey)} (${matchingStepBinding.callsite.toString()})\\n`;\n                });\n                return new Error(message);\n            }\n            const contextTypes = bindingRegistry.getContextTypesForTarget(matchingStepBindings[0].targetPrototype);\n            const bindingObject = scenarioContext.getOrActivateBindingClass(matchingStepBindings[0].targetPrototype, contextTypes);\n            bindingObject._worldObj = this;\n            return bindingObject[matchingStepBindings[0].targetPropertyKey].apply(bindingObject, arguments);\n        }",
+    "line": 196,
+    "pattern": "I should see an error message(?: \"(.*?)\")?",
+    "patternType": "RegularExpression",
+    "uri": "node_modules\\cucumber-tsflow\\src\\binding-decorator.ts"
+  },
+  {
+    "matches": [
+      {
+        "line": 18,
+        "text": "the session should be submitted",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      }
+    ],
+    "code": "function () {\r\n    // Write code here that turns the phrase above into concrete actions\r\n    return \"pending\";\r\n}",
+    "line": 3,
+    "pattern": "the session should be submitted",
+    "patternType": "CucumberExpression",
+    "uri": "features\\Submissions\\NewSpeakerSubmission.steps.ts"
+  },
+  {
+    "matches": [
+      {
+        "line": 31,
+        "text": "the session should NOT be submitted",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      }
+    ],
+    "code": "function () {\r\n    // Write code here that turns the phrase above into concrete actions\r\n    return \"pending\";\r\n}",
+    "line": 8,
+    "pattern": "the session should NOT be submitted",
+    "patternType": "CucumberExpression",
+    "uri": "features\\Submissions\\NewSpeakerSubmission.steps.ts"
+  },
+  {
+    "matches": [
+      {
+        "line": 15,
+        "text": "I should be automatically authenticated",
+        "uri": "features\\Users\\NewUserRegistration.feature"
+      }
+    ],
+    "code": "(username) => {\r\n    if (username) {\r\n        console.log(`I am authenticated as ${username}`);\r\n    }\r\n    else {\r\n        console.log(`I am authenticated as ${username}`);\r\n    }\r\n    return \"pending\";\r\n}",
+    "line": 21,
+    "pattern": "I should be (?:automatically )?authenticated(?: as user \"(.*?)\")?",
+    "patternType": "RegularExpression",
+    "uri": "features\\util\\Authentication.steps.ts"
+  },
+  {
+    "matches": [
+      {
+        "line": 19,
+        "text": "I should see a thank you message",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      }
+    ],
+    "code": "function () {\r\n    console.log(`Should see thank you message`);\r\n    //return \"pending\";\r\n}",
+    "line": 4,
+    "pattern": "I should see a thank you message",
+    "patternType": "CucumberExpression",
+    "uri": "features\\util\\Messages.steps.ts"
+  },
+  {
+    "matches": [
+      {
+        "line": 20,
+        "text": "I should see options:",
+        "uri": "features\\Submissions\\NewSpeakerSubmission.feature"
+      }
+    ],
+    "code": "function (dataTable) {\r\n    const options = dataTableHelpers_1.dataTableToStrings(dataTable);\r\n    console.log(`Should see options ${options.join(\", \")}`);\r\n    //return \"pending\";\r\n}",
+    "line": 9,
+    "pattern": "I should see options:",
+    "patternType": "CucumberExpression",
+    "uri": "features\\util\\Messages.steps.ts"
+  }
+]
