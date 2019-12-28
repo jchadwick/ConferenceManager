@@ -6,16 +6,16 @@ This folder contains the platform's specifications in Gherkin format.
 
 The platform contains the following high-level features:
 
-* Attendee Scheduling (aka "My Schedule"): ability for attendees to build a custom view of the schedule (i.e. plan the sessions they wish to attend)
-* Evaluations: Events, Session, and Speaker evaluations
-* Events: instances of a given Event (aka Conference)
-* Schedules: ability to schedule Sessions in an Event
-* Sessions: ability to manage approved/accepted Speaker Submissions
-* Speakers: ability to manage the folks who present Sessions
-* Sponsors: ability to manage Event Sponsors
+* [Attendee Scheduling](./features/AttendeeSchedules/) (aka "My Schedule"): ability for attendees to build a custom view of the schedule (i.e. plan the sessions they wish to attend)
+* [Evalutations](./features/Evalutations/): Events, Session, and Speaker evaluations
+* [Events](./features/Events/): instances of a given Event (aka Conference)
+* [Scheduling](./features/Schedules/): ability to schedule Sessions in an Event
+* [Sessions](./features/Sessions/): ability to manage approved/accepted Speaker Submissions
+* [Speakers](./features/Speakers/): ability to manage the folks who present Sessions
+* [Sponsors](./features/Sponsors/): ability to manage Event Sponsors
 * Submissions: ability to track and evaluate Speaker submissions (aka not yet accepted Sessions)
-* Teams: ability to manage Teams of Users (aka Organizers of a conference)
-* Users: ability to manage Users and their Roles
+* [Teams](./features/Teams/): ability to manage Teams of Users (aka Organizers of a conference)
+* [Users](./features/Users/): ability to manage Users and their Roles
 
 ## Users / Roles
 * System Admin: the superusers of the system

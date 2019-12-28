@@ -6,7 +6,7 @@ const givenAutheticatedAsRole = (role: string) => {
   }
 
   console.log(`Given role ${role}`);
-  //return 'pending';
+  return "pending";
 };
 
 Given(`I am authenticated as a User`, () =>
@@ -19,17 +19,16 @@ Given(`I am authenticated as an Organizer`, () =>
 
 Given(/I am not authenticated/, () => {
   console.log(`Given not authenticated`);
-  //return "pending";
+  return "pending";
 });
 
 Then(
   /I should be (?:automatically )?authenticated(?: as user "(.*?)")?/,
   (username: string) => {
     if (username) {
-      console.log(`I am authenticated as ${username}`);
+      return "pending";
     } else {
-      console.log(`I am authenticated as ${username}`);
+      return "pending";
     }
-    return "pending";
   }
 );
