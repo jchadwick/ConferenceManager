@@ -1,13 +1,12 @@
-import { Then } from "cucumber";
-import { dataTableToStrings } from "./dataTableHelpers";
+import { Then, TableDefinition } from "cucumber";
 
-Then("I should see a thank you message", function() {
-  console.log(`Should see thank you message`);
-  //return "pending";
+Then(/I should see "(.*?)"/, function(message: string) {
+  console.log(`Should see message "${message}"`);
+  return "pending";
 });
 
-Then("I should see options:", function(dataTable) {
-  const options = dataTableToStrings(dataTable);
+Then("I should see options:", function(dataTable: TableDefinition) {
+  const options = dataTable.rows().map(([option]) => option);
   console.log(`Should see options ${options.join(", ")}`);
-  //return "pending";
+  return "pending";
 });

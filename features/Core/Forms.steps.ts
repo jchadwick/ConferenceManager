@@ -1,14 +1,14 @@
 import { binding, given, then, when } from "cucumber-tsflow";
 import { assert } from "chai";
-import { dataTableToObject } from "./dataTableHelpers";
+import { TableDefinition } from "cucumber";
 
 @binding()
 export class FormsSteps {
   @when("I populate the form with:")
-  whenIPopulateTheFormWithADataTable(dataTable) {
+  whenIPopulateTheFormWithADataTable(dataTable: TableDefinition) {
     // Write code here that turns the phrase above into concrete actions
     console.log(`When I fill the form with:`);
-    console.table(dataTableToObject(dataTable));
+    console.table(dataTable.rowsHash());
     return "pending";
   }
 

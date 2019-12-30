@@ -1,5 +1,4 @@
-import { binding, given, then, when } from "cucumber-tsflow";
-import { assert } from "chai";
+import { binding, then } from "cucumber-tsflow";
 
 @binding()
 export class NewEventSteps {
@@ -15,16 +14,3 @@ export class NewEventSteps {
     return "pending";
   }
 }
-
-/*
-   ? When I enter the following event information:
-       | name       | description       |
-       | Test Event | My new test event |
-       Undefined. Implement with the following snippet:
-
-         When('I enter the following event information:', function (dataTable) {   
-           // Write code here that turns the phrase above into concrete actions    
-           return 'pending';
-         });
-
-*/

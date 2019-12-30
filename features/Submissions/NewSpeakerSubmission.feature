@@ -16,7 +16,7 @@ Feature: New Session Submission
             | tags        | test, testing, gherkin, bdd            |
         And submit the form
         Then the session should be submitted
-        And I should see a thank you message
+        And I should see "thank you"
         And I should see options:
             | View the submission    |
             | Submit another session |
