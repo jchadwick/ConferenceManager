@@ -22,6 +22,6 @@
     "jsx": "react"
   },
   "include": [
-    "src", "tmp/organizer/event"
+    "src", "tmp/organizer/event", "../shared/index.ts"
   ]
 }

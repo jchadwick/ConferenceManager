@@ -1,0 +1,8 @@
+organizerEvents:
+    name: organizerEvents
+    handler: src/organizer/events/organizerEventsHandler.organizerEventsHandler
+    events:
+      - http:
+          path: organizer/events
+          method: get
+          cors: true

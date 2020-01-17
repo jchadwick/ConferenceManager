@@ -15,11 +15,5 @@ custom:
     httpPort: 4000
 
 functions:
-  ping:
-    name: ping
-    handler: src/ping.pingHandler
-    events:
-      - http:
-          path: ping
-          method: get
-          cors: true
+  - ${file(src/ping/serverless.yml)}
+  - ${file(src/organizer/events/serverless.yml)}

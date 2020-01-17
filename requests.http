@@ -1,1 +1,6 @@
+### PING
 GET http://localhost:4000/dev/ping HTTP/1.1
+
+
+### Organizer Events
+GET http://localhost:4000/dev/organizer/events HTTP/1.1

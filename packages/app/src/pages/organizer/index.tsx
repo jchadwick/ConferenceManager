@@ -1,23 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import { Flexbox } from "../../components";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import { Link } from "@reach/router";
 import { RouteComponentProps } from "@reach/router";
-
-interface Event {
-  id: string;
-  name: string;
-  startTime?: Date;
-  endTime?: Date;
-}
+import { Event } from "../../../../shared/models";
 
 export default function OrganizerDashboard(props: RouteComponentProps<{}>) {
-  const [events] = useState<Event[]>([
-    { id: "1234", name: "TechBash 2018" },
-    { id: "12345", name: "TechBash 2019" },
-    { id: "121111", name: "TechBash 2020" }
-  ]);
+  const [events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/dev/organizer/events", { mode: "cors" })
+      .then(x => x.json())
+      .then(setEvents);
+  }, []);
 
   return (
     <Layout view="organizer">
