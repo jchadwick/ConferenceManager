@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.7",
     "@types/cucumber": "^6.0.0",
+    "babel-plugin-transform-imports": "^2.0.0",
     "chai": "^4.2.0",
     "cucumber": "^6.0.5",
     "cucumber-pretty": "^6.0.0",

@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    [
+      "transform-imports",
+      {
+        "@material-ui/icons": {
+          "transform": "@material-ui/icons/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
+  ]
+}
