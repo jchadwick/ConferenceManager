@@ -1,0 +1,25 @@
+service: conference-manager
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  profile: devProfile
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+
+functions:
+  ping:
+    name: ping
+    handler: src/ping.pingHandler
+    events:
+      - http:
+          path: ping
+          method: get
+          cors: true

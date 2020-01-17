@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.39",
+    "serverless": "^1.61.2",
+    "serverless-offline": "^6.0.0-alpha.62",
+    "serverless-plugin-typescript": "^1.1.9",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.5",
+    "aws-sdk": "^2.605.0"
+  }
+}
