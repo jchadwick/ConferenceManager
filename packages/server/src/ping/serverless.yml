@@ -1,8 +1,0 @@
-ping:
-    name: ping
-    handler: src/ping/ping.pingHandler
-    events:
-      - http:
-          path: ping
-          method: get
-          cors: true
