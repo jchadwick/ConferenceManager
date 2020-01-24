@@ -1,6 +1,10 @@
+type DateTime = number;
+
 export interface Event {
   id: string;
   name: string;
-  startTime?: Date;
-  endTime?: Date;
+  startTime?: DateTime;
+  endTime?: DateTime;
+  callForSpeakersStartTime?: DateTime;
+  callForSpeakersEndTime?: DateTime;
 }
