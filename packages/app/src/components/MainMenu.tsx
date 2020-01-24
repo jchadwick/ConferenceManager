@@ -7,6 +7,7 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { Tabs, Tab } from "@material-ui/core";
 import { Link } from "@reach/router";
 import { Row } from "./Flexbox";
+import { useAuth0 } from "../util/auth0";
 
 const ViewPageIndexLookup = { speaker: 0, organizer: 1 };
 
@@ -51,32 +52,49 @@ export const MainMenu = (props: MainMenuProps) => {
 };
 
 const CurrentUser = () => {
-  return (
-    <Link to="/login">
-      <Button href="/login" color="primary" variant="outlined" className="link">
-        Login
+  const { loading, isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+
+  return loading ? <div></div> : (isAuthenticated && user) ? (
+    <div>
+      {user.name}
+      <Button
+        onClick={() => logout()}
+        color="secondary"
+        variant="outlined"
+        className="link"
+      >
+        Logout
       </Button>
-    </Link>
+    </div>
+  ) : (
+    <Button
+      onClick={() => loginWithRedirect()}
+      color="primary"
+      variant="outlined"
+      className="link"
+    >
+      Login
+    </Button>
   );
 };
 
 const MainNav = ({ view }) => {
   const currentTab = view ? ViewPageIndexLookup[view] : null;
   return (
-      <>
-        <Tabs
-          value={currentTab}
-          indicatorColor="primary"
-          textColor="primary"
-          centered
-        >
-          <Link to="/speaker">
-            <Tab label="Speaker" />
-          </Link>
-          <Link to="/organizer">
-            <Tab label="Organizer" />
-          </Link>
-        </Tabs>
-      </>
+    <>
+      <Tabs
+        value={currentTab}
+        indicatorColor="primary"
+        textColor="primary"
+        centered
+      >
+        <Link to="/speaker">
+          <Tab label="Speaker" />
+        </Link>
+        <Link to="/organizer">
+          <Tab label="Organizer" />
+        </Link>
+      </Tabs>
+    </>
   );
 };
