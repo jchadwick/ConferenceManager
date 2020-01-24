@@ -1,11 +1,20 @@
 import React, { PropsWithChildren } from "react";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import { MainMenu, ViewMode } from "./MainMenu";
-import { Flexbox, Column } from "./Flexbox";
+import { MainMenu } from "./MainMenu";
 import { Typography, Link } from "@material-ui/core";
+import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles(theme =>
   createStyles({
+    container: {
+      display: "flex",
+      flexGrow: 1,
+      flexDirection: "column"
+    },
+    main: {
+      display: "flex",
+      flexGrow: 1
+    },
     footer: {
       height: theme.spacing(5),
       borderTop: `1px solid ${theme.palette.divider}`,
@@ -14,29 +23,24 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-interface LayoutProps {
-  view: ViewMode;
-  direction?: "column" | "row";
-}
-
-export default function Layout(props: PropsWithChildren<LayoutProps>) {
+export default function Layout(props: PropsWithChildren<{}>) {
   const classes = useStyles(props);
+  const { pathname } = useLocation();
+
+  const [view] = pathname
+    .substr(1)
+    .toLowerCase()
+    .split("/");
 
   return (
     <>
-      <Column flexGrow={1}>
-        <MainMenu view={props.view} />
-        <Flexbox
-          component="main"
-          flexGrow={1}
-          flexDirection={props.direction || "column"}
-        >
-          {props.children}
-        </Flexbox>
+      <div className={classes.container}>
+        <MainMenu view={view as any} />
+        <main className={classes.main}>{props.children}</main>
         <footer className={classes.footer}>
           <Copyright />
         </footer>
-      </Column>
+      </div>
     </>
   );
 }

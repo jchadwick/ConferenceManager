@@ -4,7 +4,7 @@ import { PageHeader } from "../../components/PageHeader";
 import { Row } from "../../components/Flexbox";
 import { Button } from "@material-ui/core";
 import ViewPublicProfileIcon from "@material-ui/icons/Launch";
-import { RouteComponentProps } from "@reach/router";
+import { RouteComponentProps } from "react-router";
 
 export default function SpeakerDashboard(props: RouteComponentProps) {
   return (

@@ -10,12 +10,11 @@ import MySessionsIcon from "@material-ui/icons/QueuePlayNext";
 import MyEventsIcon from "@material-ui/icons/Event";
 import IntegrationsIcon from "@material-ui/icons/Settings";
 import ViewPublicProfileIcon from "@material-ui/icons/Launch";
-import Layout from "../../components/Layout";
-import { Column } from "../../components/Flexbox";
+import { Column, Row } from "../../components/Flexbox";
 
 export default function SpeakerLayout(props: PropsWithChildren<{}>) {
   return (
-    <Layout view="speaker" direction="row">
+    <Row flexGrow={1}>
       <SecondaryMenu>
         <SecondaryMenuItem text="Dashboard" Icon={DashboardIcon} />
         <SecondaryMenuItem text="My Profile" Icon={MyProfileIcon} />
@@ -32,6 +31,6 @@ export default function SpeakerLayout(props: PropsWithChildren<{}>) {
       <Column flexGrow={1} component="section">
         {props.children}
       </Column>
-    </Layout>
+    </Row>
   );
 }

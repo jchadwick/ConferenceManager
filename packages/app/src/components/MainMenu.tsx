@@ -2,10 +2,9 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { Tabs, Tab } from "@material-ui/core";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import { Row } from "./Flexbox";
 
 const ViewPageIndexLookup = { speaker: 0, organizer: 1 };
@@ -14,6 +13,12 @@ export type ViewMode = keyof typeof ViewPageIndexLookup | null;
 
 const useStyles = makeStyles(theme =>
   createStyles({
+    mainLogo: {
+      fontSize: "150%",
+      textDecoration: "none",
+      color: "#555",
+      fontWeight: 600
+    },
     appBar: {
       borderBottom: `1px solid ${theme.palette.divider}`
     }
@@ -36,12 +41,10 @@ export const MainMenu = (props: MainMenuProps) => {
       className={classes.appBar}
     >
       <Toolbar style={{ flexWrap: "wrap" }}>
-        <Link to="/">
-          <Typography variant="h6" color="inherit" noWrap>
-            Conference Manager
-          </Typography>
+        <Link className={classes.mainLogo} to="/">
+          Conference Manager
         </Link>
-        <Row flexGrow={4}>
+        <Row flexGrow={4} justifyContent="center">
           <MainNav view={view} />
         </Row>
         <CurrentUser />
@@ -62,21 +65,15 @@ const CurrentUser = () => {
 
 const MainNav = ({ view }) => {
   const currentTab = view ? ViewPageIndexLookup[view] : null;
-  return (
-      <>
-        <Tabs
-          value={currentTab}
-          indicatorColor="primary"
-          textColor="primary"
-          centered
-        >
-          <Link to="/speaker">
-            <Tab label="Speaker" />
-          </Link>
-          <Link to="/organizer">
-            <Tab label="Organizer" />
-          </Link>
-        </Tabs>
-      </>
-  );
+  return view ? (
+    <Tabs
+      value={currentTab}
+      indicatorColor="primary"
+      textColor="primary"
+      centered
+    >
+      <Tab component={Link} to="/speaker" label="Speaker" />
+      <Tab component={Link} to="/organizer" label="Organizer" />
+    </Tabs>
+  ) : null;
 };

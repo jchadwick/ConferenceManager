@@ -1,16 +1,15 @@
 import React from "react";
-import { RouteComponentProps } from "@reach/router";
-import Layout from "../../../components/Layout";
+import { RouteComponentProps } from "react-router";
 import { Column } from "../../../components";
 
-export default ({ eventId }: RouteComponentProps<{ eventId }>) => {
-  console.log(`eventId: ${typeof eventId}`);
-  
+export default ({
+  match: {
+    params: { eventId }
+  }
+}: RouteComponentProps<{ eventId }>) => {
   return (
-    <Layout view={null}>
-      <Column justifyContent="center" alignItems="center">
-        <h3>Edit Event #{eventId}</h3>
-      </Column>
-    </Layout>
+    <Column justifyContent="center" alignItems="center">
+      <h3>Edit Event #{eventId}</h3>
+    </Column>
   );
 };
