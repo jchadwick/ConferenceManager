@@ -1,0 +1,35 @@
+type SpeakerProfile @model @auth(rules: [
+  { allow: owner }
+  ]) {
+  id: ID
+  owner: ID
+  key: String
+  name: String
+  tagline: String
+  biography: String
+  avatar: AWSURL
+  socialLinks: [SocialLink]
+  location: String
+  topics: [String]
+  abstracts: [SessionAbstract]
+}
+
+type SocialLink {
+  site: SocialSite
+  url: AWSURL
+}
+
+enum SocialSite {
+  GitHub
+  LinkedIn
+  Facebook
+  Twitter
+}
+
+type SessionAbstract {
+  speakers: [ID]
+  labels: [String]
+  title: String
+  description: String
+  comments: String
+}

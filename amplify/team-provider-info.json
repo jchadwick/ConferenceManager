@@ -1,0 +1,25 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-conferencemanager-dev-11433-authRole",
+            "UnauthRoleArn": "arn:aws:iam::052029038762:role/amplify-conferencemanager-dev-11433-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::052029038762:role/amplify-conferencemanager-dev-11433-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-conferencemanager-dev-11433-deployment",
+            "UnauthRoleName": "amplify-conferencemanager-dev-11433-unauthRole",
+            "StackName": "amplify-conferencemanager-dev-11433",
+            "StackId": "arn:aws:cloudformation:us-east-1:052029038762:stack/amplify-conferencemanager-dev-11433/206cf9c0-44ba-11ea-af41-0a4fdb0c1726",
+            "AmplifyAppId": "d265dnuas6z9mi"
+        },
+        "categories": {
+            "auth": {
+                "conferencemanager": {
+                    "facebookAppId": "f",
+                    "googleClientId": "f",
+                    "amazonAppId": "f",
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"f\",\"client_secret\":\"f\"},{\"ProviderName\":\"Google\",\"client_id\":\"f\",\"client_secret\":\"f\"},{\"ProviderName\":\"LoginWithAmazon\",\"client_id\":\"f\",\"client_secret\":\"f\"}]"
+                }
+            }
+        }
+    }
+}
