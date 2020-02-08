@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
-import { Panel } from "./Panel";
 import { Row } from "./Flexbox";
+import { Paper } from "@material-ui/core";
 
 interface PageHeaderProps {
   title: string | ReactElement;
@@ -8,7 +8,7 @@ interface PageHeaderProps {
 }
 
 export const PageHeader = ({ title, actions }: PageHeaderProps) => (
-  <Panel>
+  <Paper>
     <Row>
       <Row flexGrow={1}>
         <h2>{title}</h2>
@@ -17,5 +17,5 @@ export const PageHeader = ({ title, actions }: PageHeaderProps) => (
         {actions && actions}
       </Row>
     </Row>
-  </Panel>
+  </Paper>
 );

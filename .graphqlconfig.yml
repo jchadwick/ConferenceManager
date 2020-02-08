@@ -2,14 +2,17 @@ projects:
   conferencemanager:
     schemaPath: amplify/backend/api/conferencemanager/build/schema.graphql
     includes:
-      - src/graphql/**/*.ts
+      - packages/api/**/*.ts
     excludes:
       - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: typescript
-        generatedFileName: src/graphql/api.ts
-        docsFilePath: src/graphql
+        generatedFileName: packages/api/api.ts
+        docsFilePath: packages/api
         region: us-east-1
         apiId: null
         maxDepth: 2
+extensions:
+  amplify:
+    version: 3

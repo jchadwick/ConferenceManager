@@ -1,13 +1,15 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "module": "CommonJS",
-        "moduleResolution": "Node",
-        "allowSyntheticDefaultImports": true,
-        "experimentalDecorators": true,
-        "strict": false
-    },
-    "include": [
-        "**/*.ts", "**/*.tsx", "packages/server/src/ping/ping.ts"
-    ]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "strict": false,
+    "baseUrl": "./",
+    "paths": {
+      "@confman/*": ["./packages/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
 }

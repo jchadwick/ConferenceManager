@@ -15,7 +15,7 @@
             "auth": {
                 "conferencemanager": {
                     "facebookAppId": "f",
-                    "googleClientId": "f",
+                    "googleClientId": "790514884493-ogck3q4vbf1ceeuhckqp0bjgdievem19.apps.googleusercontent.com",
                     "amazonAppId": "f",
                     "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"f\",\"client_secret\":\"f\"},{\"ProviderName\":\"Google\",\"client_id\":\"f\",\"client_secret\":\"f\"},{\"ProviderName\":\"LoginWithAmazon\",\"client_id\":\"f\",\"client_secret\":\"f\"}]"
                 }

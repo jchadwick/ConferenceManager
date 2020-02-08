@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { Tabs, Tab } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { Row } from "./Flexbox";
+import { Auth } from "aws-amplify";
+import { Authenticator } from "aws-amplify-react";
+import { UsernameAttributes } from "aws-amplify-react/lib-esm/Auth/common/types";
 
 const ViewPageIndexLookup = { speaker: 0, organizer: 1 };
 
@@ -33,6 +35,10 @@ export const MainMenu = (props: MainMenuProps) => {
   const classes = useStyles(props);
   const { view } = props;
 
+  useEffect(() => {
+    Auth.currentSession().then(x => console.log(x));
+  }, []);
+
   return (
     <AppBar
       position="static"
@@ -56,9 +62,7 @@ export const MainMenu = (props: MainMenuProps) => {
 const CurrentUser = () => {
   return (
     <Link to="/login">
-      <Button href="/login" color="primary" variant="outlined" className="link">
-        Login
-      </Button>
+      <Authenticator usernameAttributes={UsernameAttributes.USERNAME} />
     </Link>
   );
 };
@@ -72,7 +76,7 @@ const MainNav = ({ view }) => {
       textColor="primary"
       centered
     >
-      <Tab component={Link} to="/speaker" label="Speaker" />
+      <Tab component={Link} to="/my/profile" label="Speaker" />
       <Tab component={Link} to="/organizer" label="Organizer" />
     </Tabs>
   ) : null;
