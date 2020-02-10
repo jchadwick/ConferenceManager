@@ -1,6 +1,10 @@
 import { GetEventQuery, GetSpeakerProfileQuery } from ".";
 
 export type Event = GetEventQuery["getEvent"];
+export type EventSummary = Pick<
+  Event,
+  "displayName" | "endTime" | "id" | "startTime"
+>;
 export type EventSubmission = Event["submissions"][0];
 export type EventTimeSlot = Event["timeSlots"][0];
 export type EventLocation = Event["locations"][0];
