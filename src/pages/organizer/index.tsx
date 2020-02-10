@@ -14,7 +14,7 @@ export default function OrganizerDashboard(props: RouteComponentProps<{}>) {
 
   useEffect(() => {
     eventService.getEventsOrganizedBy(user.username).then(setEvents);
-  }, []);
+  }, [user.username]);
 
   return (
     <OrganizerLayout events={events}>
