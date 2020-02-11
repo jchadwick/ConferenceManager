@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Homepage from "./pages/index";
-import SpeakerDashboard from "./pages/speaker";
-import OrganizerDashboard from "./pages/organizer";
-import EventDetails from "./pages/event";
+import Homepage from "./Homepage";
+import SpeakerDashboard from "./speaker";
+import OrganizerDashboard from "./organizer";
+import EventDetails from "./event";
 import Layout from "./components/Layout";
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";

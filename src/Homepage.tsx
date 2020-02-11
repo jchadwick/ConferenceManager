@@ -1,6 +1,6 @@
 import React from "react";
 import { RouteComponentProps } from "react-router";
-import { Column } from "../components";
+import { Column } from "./components";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 

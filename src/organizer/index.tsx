@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Flexbox } from "../../components";
+import { Flexbox, useCurrentUser } from "../components";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router";
-import eventService from "../../services/eventService";
-import { useCurrentUser } from "../../components/useCurrentUser";
-import { EventSummary } from "../../api";
+import eventService from "../services/eventService";
+import { EventSummary } from "../api";
 import OrganizerLayout from "./_Layout";
 
 export default function OrganizerDashboard(props: RouteComponentProps<{}>) {

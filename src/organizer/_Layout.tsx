@@ -1,13 +1,13 @@
 import React, { PropsWithChildren } from "react";
 import { Divider } from "@material-ui/core";
 import {
+  Column, Row, Loading,
   SecondaryMenu,
   SecondaryMenuItem
-} from "../../components/SecondaryMenu";
+} from "../components";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import EventIcon from "@material-ui/icons/Event";
-import { Column, Row, Loading } from "../../components";
-import { EventSummary } from "../../api";
+import { EventSummary } from "../api";
 
 interface OrganizerLayoutProps {
   events: EventSummary[];

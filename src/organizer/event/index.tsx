@@ -7,10 +7,9 @@ export default ({
     params: { eventId }
   }
 }: RouteComponentProps<{ eventId }>) => {
-  console.log(`eventId: ${typeof eventId}`);
   return (
     <Column justifyContent="center" alignItems="center">
-      <h3>Event #{eventId}</h3>
+      <h3>Edit Event #{eventId}</h3>
     </Column>
   );
 };

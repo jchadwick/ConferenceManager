@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import Layout from "./_Layout";
-import { PageHeader } from "../../components/PageHeader";
-import { Row, Column } from "../../components/Flexbox";
+import { Loading, PageHeader, PageTitle, Row, Column } from "../components";
 import { Button, TextField, Paper } from "@material-ui/core";
 import ViewPublicProfileIcon from "@material-ui/icons/Launch";
-import { PageTitle } from "../../components/PageTitle";
-import { Loading } from "../../components/Loading";
-import { SpeakerProfile } from "../../api";
-import { useMySpeakerProfile } from "../../components/speaker/useMySpeakerProfile";
-import { SpeakerTile } from "../../components/speaker/SpeakerTile";
+import { SpeakerProfile } from "../api";
+import { SpeakerTile } from "./components/SpeakerTile";
+import { useMySpeakerProfile } from "./components/useMySpeakerProfile";
 
 export default function SpeakerDashboard() {
   const [editProfile] = useState(false);

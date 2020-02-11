@@ -1,16 +1,16 @@
 import React, { PropsWithChildren } from "react";
 import { Divider } from "@material-ui/core";
 import {
+  Column, Row,
   SecondaryMenu,
   SecondaryMenuItem
-} from "../../components/SecondaryMenu";
+} from "../components";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import MyProfileIcon from "@material-ui/icons/Person";
 import MySessionsIcon from "@material-ui/icons/QueuePlayNext";
 import MyEventsIcon from "@material-ui/icons/Event";
 import IntegrationsIcon from "@material-ui/icons/Settings";
 import ViewPublicProfileIcon from "@material-ui/icons/Launch";
-import { Column, Row } from "../../components/Flexbox";
 
 export default function SpeakerLayout(props: PropsWithChildren<{}>) {
   return (
